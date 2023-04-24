@@ -1,3 +1,9 @@
+/**
+‣ This is the main class that represents the Home Inventory Manager application.
+‣ It manages a list of inventory items and provides a graphical user interface
+‣ for adding, editing, deleting, and printing items from the list.
+**/
+
 package com.suven.consultancy;
 
 import java.awt.Color;
@@ -49,6 +55,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import com.toedter.calendar.*;
 import com.toedter.calendar.JDateChooser;
 
+/**
+‣ Represents the main class that creates the graphical user interface
+‣ and manages the inventory items.
+**/
 public class Home_Inventory_Manager extends JFrame {
     JToolBar inventoryToolBar = new JToolBar();
     JButton newButton = new JButton(new ImageIcon("new.gif"));
@@ -86,7 +96,12 @@ public class Home_Inventory_Manager extends JFrame {
     int currentEntry;
     static final int entriesPerPage = 2;
     static int lastPage;
+    
+    
 
+    /**
+    ‣ The main method that starts the application by creating a new instance of the Home_Inventory_Manager class.
+    **/
     public static void main(String args[]) {
         // create frame
         new Home_Inventory_Manager().show();
