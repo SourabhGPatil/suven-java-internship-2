@@ -1,1 +1,1 @@
-# suven-java-internship-2
+# Inventory Management Project
