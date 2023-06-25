@@ -68,6 +68,7 @@ public class Home_Inventory_Manager extends JFrame {
     JButton nextButton = new JButton(new ImageIcon("next.gif"));
     JButton printButton = new JButton(new ImageIcon("print.gif"));
     JButton exitButton = new JButton();
+    
     // Frame
     JLabel itemLabel = new JLabel();
     JTextField itemTextField = new JTextField();
@@ -119,6 +120,8 @@ public class Home_Inventory_Manager extends JFrame {
         });
         getContentPane().setLayout(new GridBagLayout());
         GridBagConstraints gridConstraints;
+
+        // Inventory ToolBar
         inventoryToolBar.setFloatable(false);
         inventoryToolBar.setBackground(Color.BLUE);
         inventoryToolBar.setOrientation(SwingConstants.VERTICAL);
@@ -129,6 +132,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.fill = GridBagConstraints.VERTICAL;
         getContentPane().add(inventoryToolBar, gridConstraints);
         inventoryToolBar.addSeparator();
+
+        // New Button
         Dimension bSize = new Dimension(70, 50);
         newButton.setText("New");
         sizeButton(newButton, bSize);
@@ -140,8 +145,11 @@ public class Home_Inventory_Manager extends JFrame {
         newButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 newButtonActionPerformed(e);
+                }
             }
-        });
+        );
+
+        // Delete Button
         deleteButton.setText("Delete");
         sizeButton(deleteButton, bSize);
         deleteButton.setToolTipText("Delete Current Item");
@@ -152,8 +160,11 @@ public class Home_Inventory_Manager extends JFrame {
         deleteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 deleteButtonActionPerformed(e);
+                }
             }
-        });
+        );
+
+        // Save Button
         saveButton.setText("Save");
         sizeButton(saveButton, bSize);
         saveButton.setToolTipText("Save Current Item");
@@ -164,9 +175,13 @@ public class Home_Inventory_Manager extends JFrame {
         saveButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 saveButtonActionPerformed(e);
+                }
             }
-        });
+        );
+        
         inventoryToolBar.addSeparator();
+
+        // Previous Button
         previousButton.setText("Previous");
         sizeButton(previousButton, bSize);
         previousButton.setToolTipText("Display Previous Item");
@@ -177,8 +192,11 @@ public class Home_Inventory_Manager extends JFrame {
         previousButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 previousButtonActionPerformed(e);
+                }
             }
-        });
+        );
+
+        // Next Button
         nextButton.setText("Next");
         sizeButton(nextButton, bSize);
         nextButton.setToolTipText("Display Next Item");
@@ -189,9 +207,13 @@ public class Home_Inventory_Manager extends JFrame {
         nextButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 nextButtonActionPerformed(e);
+                }
             }
-        });
+        );
+        
         inventoryToolBar.addSeparator();
+        
+        // Print Button
         printButton.setText("Print");
         sizeButton(printButton, bSize);
         printButton.setToolTipText("Print Inventory List");
@@ -202,8 +224,11 @@ public class Home_Inventory_Manager extends JFrame {
         printButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 printButtonActionPerformed(e);
+                }
             }
-        });
+        );
+
+        // Exit Button
         exitButton.setText("Exit");
         sizeButton(exitButton, bSize);
         exitButton.setToolTipText("Exit Program");
@@ -212,8 +237,12 @@ public class Home_Inventory_Manager extends JFrame {
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 exitButtonActionPerformed(e);
+                }
             }
-        });
+        );
+
+
+        // Set text and properties for itemLabel
         itemLabel.setText("Inventory Item");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -221,6 +250,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 10);
         gridConstraints.anchor = GridBagConstraints.EAST;
         getContentPane().add(itemLabel, gridConstraints);
+
+        // Set properties for itemTextField
         itemTextField.setPreferredSize(new Dimension(400, 25));
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 2;
@@ -234,6 +265,8 @@ public class Home_Inventory_Manager extends JFrame {
                 itemTextFieldActionPerformed(e);
             }
         });
+
+        // Set text and properties for locationLabel
         locationLabel.setText("Location");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -241,6 +274,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 10);
         gridConstraints.anchor = GridBagConstraints.EAST;
         getContentPane().add(locationLabel, gridConstraints);
+
+        // Set properties for locationComboBox
         locationComboBox.setPreferredSize(new Dimension(270, 25));
         locationComboBox.setFont(new Font("Arial", Font.PLAIN, 12));
         locationComboBox.setEditable(true);
@@ -257,6 +292,8 @@ public class Home_Inventory_Manager extends JFrame {
                 locationComboBoxActionPerformed(e);
             }
         });
+
+        // Set text and properties for markedCheckBox
         markedCheckBox.setText("Marked?");
         markedCheckBox.setFocusable(false);
         gridConstraints = new GridBagConstraints();
@@ -265,6 +302,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 0);
         gridConstraints.anchor = GridBagConstraints.WEST;
         getContentPane().add(markedCheckBox, gridConstraints);
+
+        // Set text and properties for serialLabel
         serialLabel.setText("Serial Number");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -285,6 +324,8 @@ public class Home_Inventory_Manager extends JFrame {
                 serialTextFieldActionPerformed(e);
             }
         });
+
+        // Set text and properties for priceLabel
         priceLabel.setText("Purchase Price");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -292,6 +333,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 10);
         gridConstraints.anchor = GridBagConstraints.EAST;
         getContentPane().add(priceLabel, gridConstraints);
+
+        // Set properties for priceTextField
         priceTextField.setPreferredSize(new Dimension(160, 25));
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 2;
@@ -305,6 +348,8 @@ public class Home_Inventory_Manager extends JFrame {
                 priceTextFieldActionPerformed(e);
             }
         });
+
+        // Set text and properties for dateLabel
         dateLabel.setText("Date Purchased");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 4;
@@ -312,6 +357,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 0);
         gridConstraints.anchor = GridBagConstraints.WEST;
         getContentPane().add(dateLabel, gridConstraints);
+
+        // Set properties for dateDateChooser
         dateDateChooser.setPreferredSize(new Dimension(120, 25));
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 5;
@@ -325,6 +372,8 @@ public class Home_Inventory_Manager extends JFrame {
                 dateDateChooserPropertyChange(e);
             }
         });
+
+        // Set text and properties for storeLabel
         storeLabel.setText("Store/Website");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -332,6 +381,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 10);
         gridConstraints.anchor = GridBagConstraints.EAST;
         getContentPane().add(storeLabel, gridConstraints);
+
+        // Set properties for storeTextField
         storeTextField.setPreferredSize(new Dimension(400, 25));
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 2;
@@ -345,6 +396,8 @@ public class Home_Inventory_Manager extends JFrame {
                 storeTextFieldActionPerformed(e);
             }
         });
+
+        // Set text and properties for noteLabel
         noteLabel.setText("Note");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -352,6 +405,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 10);
         gridConstraints.anchor = GridBagConstraints.EAST;
         getContentPane().add(noteLabel, gridConstraints);
+
+        // Set properties for noteTextField
         noteTextField.setPreferredSize(new Dimension(400, 25));
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 2;
@@ -365,6 +420,9 @@ public class Home_Inventory_Manager extends JFrame {
                 noteTextFieldActionPerformed(e);
             }
         });
+
+        
+        // Set text and properties for photoLabel
         photoLabel.setText("Photo");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 1;
@@ -372,6 +430,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 10, 0, 10);
         gridConstraints.anchor = GridBagConstraints.EAST;
         getContentPane().add(photoLabel, gridConstraints);
+
+        // Set properties for photoTextArea
         photoTextArea.setPreferredSize(new Dimension(350, 35));
         photoTextArea.setFont(new Font("Arial", Font.PLAIN, 12));
         photoTextArea.setEditable(false);
@@ -387,6 +447,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 0, 0, 10);
         gridConstraints.anchor = GridBagConstraints.WEST;
         getContentPane().add(photoTextArea, gridConstraints);
+
+        // Set text and properties for photoButton
         photoButton.setText("...");
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 6;
@@ -399,6 +461,8 @@ public class Home_Inventory_Manager extends JFrame {
                 photoButtonActionPerformed(e);
             }
         });
+
+        // Set properties for searchPanel
         searchPanel.setPreferredSize(new Dimension(240, 160));
         searchPanel.setBorder(BorderFactory.createTitledBorder("Item Search"));
         searchPanel.setLayout(new GridBagLayout());
@@ -409,11 +473,16 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 0, 10, 0);
         gridConstraints.anchor = GridBagConstraints.CENTER;
         getContentPane().add(searchPanel, gridConstraints);
+
+        // create and position 26 buttons in searchPanel
         int x = 0, y = 0;
+        
         // create and position 26 buttons
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; i++) 
+            {
             // create new button
             searchButton[i] = new JButton();
+                
             // set text property
             searchButton[i].setText(String.valueOf((char) (65 + i)));
             searchButton[i].setFont(new Font("Arial", Font.BOLD, 12));
@@ -425,19 +494,24 @@ public class Home_Inventory_Manager extends JFrame {
             gridConstraints.gridx = x;
             gridConstraints.gridy = y;
             searchPanel.add(searchButton[i], gridConstraints);
+                
             // add method
             searchButton[i].addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     searchButtonActionPerformed(e);
-                }
-            });
+                    }
+                });
+                
             x++;
             // six buttons per row
-            if (x % 6 == 0) {
+            if (x % 6 == 0)
+            {
                 x = 0;
                 y++;
             }
         }
+
+        // Set properties for photoPanel
         photoPanel.setPreferredSize(new Dimension(240, 160));
         gridConstraints = new GridBagConstraints();
         gridConstraints.gridx = 4;
@@ -446,6 +520,8 @@ public class Home_Inventory_Manager extends JFrame {
         gridConstraints.insets = new Insets(10, 0, 10, 10);
         gridConstraints.anchor = GridBagConstraints.CENTER;
         getContentPane().add(photoPanel, gridConstraints);
+
+        // Pack the components to resize the frame
         pack();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((int) (0.5 * (screenSize.width - getWidth())), (int) (0.5 * (screenSize.height -
