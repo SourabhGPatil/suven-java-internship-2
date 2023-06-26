@@ -523,16 +523,26 @@ public class Home_Inventory_Manager extends JFrame {
 
         // Pack the components to resize the frame
         pack();
+
+        // Get the screen size and set the frame bounds to center it on the screen
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((int) (0.5 * (screenSize.width - getWidth())), (int) (0.5 * (screenSize.height -
                 getHeight())), getWidth(), getHeight());
+        
         int n;
+        
         // open file for entries
-        try {
+        try 
+        {
             BufferedReader inputFile = new BufferedReader(new FileReader("inventory.txt"));
+
+            // Read the number of entries from the file
             numberEntries = Integer.valueOf(inputFile.readLine()).intValue();
-            if (numberEntries != 0) {
-                for (int i = 0; i < numberEntries; i++) {
+            if (numberEntries != 0) 
+            {
+                // Read each entry from the file and store it in the myInventory array
+                for (int i = 0; i < numberEntries; i++) 
+                {
                     myInventory[i] = new InventoryItem();
                     myInventory[i].description = inputFile.readLine();
                     myInventory[i].location = inputFile.readLine();
@@ -545,20 +555,32 @@ public class Home_Inventory_Manager extends JFrame {
                     myInventory[i].photoFile = inputFile.readLine();
                 }
             }
-            // read in combo box elements
+            
+            // Read the combo box elements from the file
             n = Integer.valueOf(inputFile.readLine()).intValue();
-            if (n != 0) {
-                for (int i = 0; i < n; i++) {
+            if (n != 0) 
+            {
+                // Add each combo box element to the locationComboBox
+                for (int i = 0; i < n; i++) 
+                {
                     locationComboBox.addItem(inputFile.readLine());
                 }
             }
+            
             inputFile.close();
+
+            // Set the currentEntry to the first entry and display it
             currentEntry = 1;
             showEntry(currentEntry);
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) 
+        {
+            // If an exception occurs, set the number of entries and currentEntry to 0
             numberEntries = 0;
             currentEntry = 0;
         }
+
+        // Disable buttons if there are no entries
         if (numberEntries == 0) {
             newButton.setEnabled(false);
             deleteButton.setEnabled(false);
@@ -568,17 +590,25 @@ public class Home_Inventory_Manager extends JFrame {
         }
     }
 
+    // Method called when the form is being exited
     private void exitForm(WindowEvent evt) {
+        // Prompt the user to confirm exiting the program and check their response
         if (JOptionPane.showConfirmDialog(null, "Any unsaved changes will be lost.\nAre you sure you want to exit?",
                 "Exit Program", JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
             return;
+        
         // write entries back to file
         try {
             PrintWriter outputFile = new PrintWriter(new BufferedWriter(new FileWriter("inventory.txt")));
+
+            // Write the number of entries to the file
             outputFile.println(numberEntries);
-            if (numberEntries != 0) {
-                for (int i = 0; i < numberEntries; i++) {
+            if (numberEntries != 0) 
+            {
+                // Write each entry from the myInventory array to the file
+                for (int i = 0; i < numberEntries; i++) 
+                {
                     outputFile.println(myInventory[i].description);
                     outputFile.println(myInventory[i].location);
                     outputFile.println(myInventory[i].serialNumber);
@@ -590,20 +620,32 @@ public class Home_Inventory_Manager extends JFrame {
                     outputFile.println(myInventory[i].photoFile);
                 }
             }
+            
             // write combo box entries
             outputFile.println(locationComboBox.getItemCount());
-            if (locationComboBox.getItemCount() != 0) {
+            if (locationComboBox.getItemCount() != 0) 
+            {
+                // Write each combo box entry to the file
                 for (int i = 0; i < locationComboBox.getItemCount(); i++)
                     outputFile.println(locationComboBox.getItemAt(i));
             }
             outputFile.close();
-        } catch (Exception ex) {
+        } 
+        
+        catch (Exception ex) 
+        {
+            // Error occurred while writing to the file
         }
+        // Exit the program
         System.exit(0);
     }
 
+    // Method called when the "New" button is clicked
     private void newButtonActionPerformed(ActionEvent e) {
+        // Check if there are any unsaved changes and prompt the user to save them
         checkSave();
+
+        // Reset the form values to create a new entry
         blankValues();
     }
 
