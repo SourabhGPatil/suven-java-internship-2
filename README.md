@@ -1,4 +1,4 @@
-## Project Description: Home Inventory Management System
+# Home Inventory Management System
 
 ### Overview
 The Home Inventory Management Project is designed to provide an efficient solution for tracking and managing personal possessions. This program enables users to maintain an organized record of their belongings, aiding in better organization and accessibility of information.
