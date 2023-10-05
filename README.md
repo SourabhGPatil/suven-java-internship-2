@@ -28,5 +28,3 @@ Throughout this project, participants will gain valuable insights into the follo
 2. **Object-Oriented Programming (OOP):** Learning fundamental OOP concepts and applying them to define custom classes and objects, enhancing code structure and reusability.
 
 3. **Printing Integration:** Incorporating printing capabilities into a software project, including the utilization of print dialog controls.
-
-By undertaking this project, we will not only create a practical inventory management tool but also develop essential programming skills and enhance our understanding of user interface design and data management.
