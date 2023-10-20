@@ -21,10 +21,3 @@ To use the Home Inventory Manager:
 1. Run the project to initiate the program.
 2. Initially, the program comes with a sample inventory in the "inventory.txt" file. Users are encouraged to delete this file and begin with their own items and combo box elements to create a personalized inventory.
 
-### Learning Objectives
-Throughout this project, participants will gain valuable insights into the following areas:
-1. **Combo Box Control:** Understanding and implementing combo box controls for efficient data selection.
-
-2. **Object-Oriented Programming (OOP):** Learning fundamental OOP concepts and applying them to define custom classes and objects, enhancing code structure and reusability.
-
-3. **Printing Integration:** Incorporating printing capabilities into a software project, including the utilization of print dialog controls.
