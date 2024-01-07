@@ -7,7 +7,7 @@ The Home Inventory Management Project is designed to provide an efficient soluti
 - Develop a user-friendly Home Inventory Management program.
 - Enable users to easily track, categorize, and search for their belongings.
 - Implement a printing feature for generating physical copies of inventory records.
-- Enhance understanding of key programming concepts, including object-oriented programming and UI controls like combo boxes.
+- Enhance understanding of key programming concepts, including object-oriented programming and UI controls like combo boxes and buttons.
 
 ### Features
 1. **Inventory Tracking:** Users can add, edit, and delete items, along with specifying relevant details such as item name, description, purchase date, and value.
