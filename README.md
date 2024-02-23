@@ -18,6 +18,7 @@ The Home Inventory Management Project is designed to provide an efficient soluti
 
 ## Usage Instructions
 To use the Home Inventory Manager:
-1. Run the project to initiate the program.
-2. Initially, the program comes with a sample inventory in the "inventory.txt" file. Users are encouraged to delete this file and begin with their own items and combo box elements to create a personalized inventory.
+1. Clone this repository. 
+2. Run the project to initiate the program.
+3. Initially, the program comes with a sample inventory in the "inventory.txt" file. Users are encouraged to delete this file and begin with their own items and combo box elements to create a personalized inventory.
 
